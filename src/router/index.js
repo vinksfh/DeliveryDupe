@@ -7,13 +7,23 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'zapp',
+    name: 'Zapp',
     component: () => import('../views/Zapp.vue')
   },
   {
     path: '/getir',
     name: 'Getir',
     component: () => import('../views/Getir.vue')
+  },
+  {
+    path: '/ubereats',
+    name: 'uberEats',
+    component: () => import('../views/UberEats.vue')
+  },
+  {
+    path: '/navbarfixen',
+    name: 'nav',
+    component: () => import('../views/navFixen.vue')
   }
 ]
 

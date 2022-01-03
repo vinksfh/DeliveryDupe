@@ -1,18 +1,44 @@
 <template>
-  <div class="container">
-   <header class="header">
-     <div class="logo">
-      <img  src="../assets/getirlogo.png">
-      <h3>Wij bezorgen jouw eten binnen 10 minuten</h3>
-      <h3>Van ijsbergsla tot ijskoud bier wij brengen jou alles wat je nodig hebt (en meer) binnen minuten.</h3>
-     </div>
-   </header>
+ <div class="container">
+   <header>
+     <img class="b_img" src="../assets/background.png">
+      <section class="logo">
+        <img class="logo_img" src="../assets/3545_bb7cfc7ecaae5f28ca69bcc3eddfcbb3.png" alt="">
+      </section>
+   </header>  
    <main>
-     <h1 class="discount">Kortingen</h1>
+     <!--- info row-->
+    <section class="info_row"> 
+     <div class="info">
+       <div class="info_img">
+          <img src="../assets/imguber2.png" >
+       </div>  
+       <div class="title_info">
+         <h3>Zorg voor je werknemers</h3>
+       </div>  
+     </div>
+     <div class="info">
+       <div class="info_img">
+         <img src="../assets/imgUber3.png" >
+       </div>  
+       <div class="title_info">
+         <h3>Jouw restaurant, bij jouw bezorgd</h3>
+       </div>  
+     </div>
+     <div class="info">
+       <div class="info_img">
+        <img src="../assets/img.png" >
+       </div>  
+       <div class="title_info">
+         <h3>Werken voor uber</h3>
+       </div>  
+     </div>
+    </section> 
+   <h1 class="discount">Kortingen</h1>
      <!----kortingscode div--->      
       <section class="discount_box">
         <div class="left_side">
-        <h1>$10 ,- op je bestelling bij zapp</h1>
+        <h1>$10 ,- op je bestelling bij Uber</h1>
         <p>Krijg nu tijdelijk 10 euro koritning op je bestelling bij zapp</p>
          <p>voorwaar</p>
         </div> 
@@ -24,7 +50,7 @@
       <!----kortingscode div--->      
       <section class="discount_box">
         <div class="left_side">
-        <h1>$10 ,- op je bestelling bij zapp</h1>
+        <h1>$10 ,- op je bestelling bij Uber</h1>
         <p>Krijg nu tijdelijk 10 euro koritning op je bestelling bij zapp</p>
          <p>voorwaar</p>
         </div> 
@@ -33,15 +59,18 @@
           <h6 :class="{'active':kortingscode2 }">korting 1234</h6>
         </div>  
       </section>  
-      <!---- box 2----->
-      <section class="box_2">
-        <h1>Klaar voor uw eerste bestelling ?</h1>
-        <img src="../assets/getirstelen.png" >
-      </section>  
-   </main> 
-   <!------- footer--> 
+      <!---extra filling --->
+      <section>
+        <div class="title_map">
+          <h1>Cities near you</h1>
+        </div>  
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19486.69615054807!2d4.886410484101774!3d52.3733752063353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609bb6821e9d3%3A0xd29b21b043cebd9b!2sAmsterdam-Centrum%2C%20Amsterdam!5e0!3m2!1sen!2snl!4v1641224057210!5m2!1sen!2snl" 
+        width="1150" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        
+      </section>
+   </main>
    <footer>
-       <section class="links">
+      <section class="links">
           <div class="columns">
           <ul>
             <li>LINK</li>
@@ -73,65 +102,86 @@
       <font-awesome-icon class="social-icon" :icon="['fab', 'linkedin']" />
       <font-awesome-icon class="social-icon" :icon="['fab', 'youtube']" />
     </div>
-   </footer>
+   </footer>  
 
-    
-  </div>
+ </div>  
 </template>
-<script >
 
+<script>
 
 
 export default {
   data: () => {
     return {kortingscode : false ,
     kortingscode2 : false}
-  },
+  }
 };
 </script>
-<style >
+
+<style>
 *{
 align-items: center;
 justify-content: center;
 }
 
-/* header body css */
-
-
+/* header  css */
 header{
-  background-image: url('../assets/header-background.png') ;
   height: 40vh;
+  background-color: #e6e666;
+  display: flex;
+  flex-direction: row;
+}
+
+header >.b_img{
+  height: 40vh;
+  align-items: left !important;
+}
+.logo{
+  margin: 0 auto;
+  display: block;
+  
+}
+.logo > .logo_img{
+  height: 250px;
+}
+/* main  css */
+
+.info_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.info{
+  margin: 1em;
+
+}
+.info > .info_img{
+border-radius: 50%;
+}
+
+.info > .title_info{
+  font-weight: bold;
+  font-size: 17px;
   
 }
 
- .logo{
- margin-top:2em ;
- }
- .logo > h3{
-   color: #fff;
-  text-align:center ;
-  font-weight: bold;
- }
- .logo > img{
-   height: 110px;
-   margin: 0 auto;
-   display: block;
- }
-/* Main body css */
 main{
  display: flex;
  flex-direction: column; 
+
 }
  main > .discount{
  position: inherit;
-  margin-right: 60% ;
+  margin-right: 70% ;
   margin-top:0.3em ;
-   margin-bottom:0.3em ;
+  margin-bottom:0.3em ;
  }
 
 /* discount box css */
  main > .discount_box{
-  border: purple 2px solid;
+  border: rgb(0, 0, 0) 2px solid;
   display: flex;
   flex-direction: row; 
   height: 18vh;
@@ -150,7 +200,7 @@ main{
 }
 
 .button_1{
-  background-color: purple;
+  background-color: rgb(110, 175, 25);
   border: none;
   color: white;
   padding: 15px 32px;
@@ -173,34 +223,22 @@ main{
   opacity: 1;
   transform: translateY(0);
 }
-
-/* box 2 css */
-main > .box_2{
-  display: flex;
-  flex-direction: row;
-}
-
-.box_2 {
-  background-image: url('../assets/header-background.png') ;
-  width: 100%;
-  height: 40vh;
-}
-.box_2 >h1{
-  color: #fff;
-  margin-right:10em ;
-  font-weight: bold;
-  font-size: 40px;
-}
-
-.box_2 > img{
-  height: 450px;
+/* map box css */
+.title_map{
+  text-align: left;
+  margin-right: 70% ;
+  margin-top:0.3em ;
+  margin-bottom:0.3em ;
+  font-size: 20px;
 }
 /* footer css */
 footer{
+  background: black;
   height: 30vh;
   width: 100%;
   display: flex;
   flex-direction: row;
+  margin-top: 3em;
 }
 .links{
   display: flex;
@@ -216,16 +254,16 @@ footer{
  }
 .links > .columns > ul{
   list-style-type: none;
-  color: purple;
+  color: rgb(255, 255, 255);
   font-weight: bold;
 }
 
 ul > li:hover{
-  color: #00008b;
+  color: #747272;
 }
 
 footer > .social{
-  color: purple;
+  color: rgb(241, 241, 241);
   position: absolute;
   right: 20px;
   font-size: 25px;
@@ -234,5 +272,4 @@ footer > .social{
 .social > .social-icon{
   margin: 0.5em;
 }
-
 </style>

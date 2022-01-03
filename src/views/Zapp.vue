@@ -1,9 +1,7 @@
 <template>
 <div class="container">
   <header class="header">
-    
     <div class="heading">
-      <NavHome />
     <img src="../assets/zapp_logo.abf559db.svg" >
     <div class="titles">
     <p class="title">Want it. Need it. Zapp it<br/></p>
@@ -95,18 +93,12 @@
   
 </template>
 <script>
-import NavHome from '../components/navHome.vue';
-
 
 export default {
   data: () => {
     return {kortingscode : false ,
     kortingscode2 : false}
-  },
-  components: {
-    
-    NavHome,
-  }
+  } 
 };
 </script>
 <style>

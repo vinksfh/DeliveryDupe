@@ -1,5 +1,6 @@
 <template>
  <div id="app">
+    <NavHome />
    <router-view/>
  </div>
 </template>
@@ -15,7 +16,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
-
 </style>
+<script>
+
+import navHome from "./components/navHome.vue"
+export default {
+  components: {
+    navHome,
+  }
+}
+</script>
